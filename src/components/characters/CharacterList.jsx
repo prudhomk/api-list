@@ -3,28 +3,29 @@ import PropTypes from 'prop-types';
 import Character from './Character';
 
 const CharacterList = ({ characters }) => {
-    const characterElements = characters.map((character) => (
-        <li key={character.id}>
-            <Character
-            {...character}
-        />
-        </li>
-    ));
+  const characterElements = characters.map((character) => (
+    <li key={character.id}>
+      <Character
+        {...character}
+      />
+    </li>
+  ));
 
-    return <ul>{characterElements}</ul>;
+  return <ul>{characterElements}</ul>;
 };
 
 CharacterList.propTypes = {
-    characters: PropTypes.arrayOf(
-        PropTypes.shape({
-            id: PropTypes.number.isRequired,
-            name: PropTypes.string.isRequired,
-            species: PropTypes.string.isRequired,
-            phrase: PropTypes.string.isRequired,
-            skill: PropTypes.string.isRequired,
-            image: PropTypes.string.isRequired,
-        })
-    ).isRequired,
+  characters: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+      species: PropTypes.string.isRequired,
+      phrase: PropTypes.string.isRequired,
+      skill: PropTypes.string.isRequired,
+      personality: PropTypes.string.isRequired,
+      image: PropTypes.string.isRequired,
+    })
+  ).isRequired,
 };
 
 export default CharacterList;
