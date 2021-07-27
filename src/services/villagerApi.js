@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 export const fetchCharacters = async () => {
-  const res = await fetch('https://last-airbender-api.herokuapp.com/api/v1/characters');
+  const res = await fetch('https://ac-vill.herokuapp.com/villagers');
   const json = await res.json();
 
   return json.results;
