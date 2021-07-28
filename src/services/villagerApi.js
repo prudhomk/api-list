@@ -6,7 +6,7 @@ export const fetchCharacters = async () => {
   return json;
 };
 
-export const fetchByCharacter = async () => {
+export const fetchByCharacter = async (_id) => {
   const res = await fetch(`https://ac-vill.herokuapp.com/villagers/${_id}`);
   const json = await res.json();
   

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import VillagerCharacters from '../../containers/VillagerCharacters';
-import VillagerDetails from '../../components/VillagerDetails/VillagerDetails';
+import VillagerDetail from '../../containers/VillagerDetail';
 import {
   BrowserRouter as Router,
   Route,
@@ -17,15 +17,11 @@ export default class App extends Component {
 
         <Switch>
           <Route path="/" exact={true}
-            render={routerProps => (
-              <VillagerCharacters {...routerProps}/>
-            )}
+            component={VillagerCharacters}
           />
 
           <Route path="/:_id" exact={true}
-            render={routerProps => (
-              <VillagerDetails {...routerProps}/>
-            )}
+            component={VillagerDetail}
           />
 
         </Switch>

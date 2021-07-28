@@ -9,13 +9,16 @@ export default class VillagerDetail extends Component {
     };
 
     async componentDidMount() {
-      const character = await fetchByCharacter(this.props.match.params._id);
+      console.log(this.props);
+      const { match } = this.props;
+      
+      const character = await fetchByCharacter(match.params._id);
       this.setState({ character, loading: false });
     }
 
     render() {
       const { character, loading } = this.state;
-
+      console.log(this.props);
       if(loading) return <h1>Loading...</h1>;
 
       return <VillagerDetails {...character}/>;
