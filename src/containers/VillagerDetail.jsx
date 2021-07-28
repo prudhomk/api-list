@@ -4,12 +4,12 @@ import { fetchByCharacter } from '../services/villagerApi';
 
 export default class VillagerDetail extends Component {
     state = {
-      characters: [],
+      character: null,
       loading: true,
     };
 
     async componentDidMount() {
-      const character = await fetchByCharacter();
+      const character = await fetchByCharacter(this.props.match.params._id);
       this.setState({ character, loading: false });
     }
 
@@ -18,7 +18,7 @@ export default class VillagerDetail extends Component {
 
       if(loading) return <h1>Loading...</h1>;
 
-      return <VillagerDetails character={character} />;
+      return <VillagerDetails {...character}/>;
     }
 }
 

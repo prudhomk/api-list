@@ -1,34 +1,35 @@
-import { Component } from 'react';
-import fetchByCharacter from '../../services/villagerApi';
-import { Link } from 'react-router-dom';
+/* eslint-disable max-len */
+import React from 'react';
 import PropTypes from 'prop-types';
 
 
-const VillagerDetails = ({ characters }) => {
-    const characterDetails = characters.map((character) => (
-      <li key={character.id}>
-        <Character
-          {...character}
-        />
-      </li>
-    ));
+const VillagerDetails = ({ name, species, phrase, quote, personality, birthday, skill, image }) => {
+ 
   
-    return <ul>{characterElements}</ul>;
-  };
-
-  VillagerDetails.propTypes = {
-    characters: PropTypes.arrayOf(
-      PropTypes.shape({
-        id: PropTypes.number.isRequired,
-        name: PropTypes.string.isRequired,
-        quote: PropTypes.string.isRequired,
-        species: PropTypes.string.isRequired,
-        birthday: PropTypes.string.isRequired,
-        skill: PropTypes.string.isRequired,
-        image: PropTypes.string.isRequired,
-      })
-    ).isRequired,
-  }
+  return (
+    <>
+      <p>{ name }</p>
+      <img src={ image }></img>
+      <p>{ species }</p>
+      <p>{ phrase }</p>
+      <p>{ quote }</p>
+      <p>{ personality }</p>
+      <p>{ birthday }</p>
+      <p>{ skill }</p>
+    </>
+  );
 };
 
+VillagerDetails.propTypes = {
+  _id: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
+  species: PropTypes.string.isRequired,
+  phrase: PropTypes.string.isRequired,
+  quote: PropTypes.string.isRequired,
+  personality: PropTypes.string.isRequired,
+  birthday: PropTypes.string.isRequired,
+  skill: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+};
+ 
 export default VillagerDetails;
