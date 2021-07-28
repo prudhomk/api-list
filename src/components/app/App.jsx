@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import VillagerCharacters from '../../containers/VillagerCharacters';
+import VillagerDetails from '../../components/VillagerDetails/VillagerDetails';
 import {
   BrowserRouter as Router,
   Route,
@@ -18,6 +19,12 @@ export default class App extends Component {
           <Route path="/" exact={true}
             render={routerProps => (
               <VillagerCharacters {...routerProps}/>
+            )}
+          />
+
+          <Route path="/:_id" exact={true}
+            render={routerProps => (
+              <VillagerDetails {...routerProps}/>
             )}
           />
 

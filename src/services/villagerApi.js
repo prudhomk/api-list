@@ -6,3 +6,9 @@ export const fetchCharacters = async () => {
   return json;
 };
 
+export const fetchByCharacter = async () => {
+  const res = await fetch(`https://ac-vill.herokuapp.com/villagers/${_id}`);
+  const json = await res.json();
+  
+  return json;
+};
